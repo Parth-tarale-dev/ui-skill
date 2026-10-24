@@ -1,4 +1,4 @@
-# 🎨 Master UI Skill (`ui-skill`)
+# 🎨 UI Skill (`ui-skill`)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Antigravity Compatible](https://img.shields.io/badge/Antigravity-Ready-6366f1.svg)](https://github.com/Parth-tarale-dev)
@@ -7,134 +7,99 @@
 [![Three.js](https://img.shields.io/badge/Three.js-R3F-black.svg)](https://threejs.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38bdf8.svg)](https://tailwindcss.com)
 
-> **World-Class Frontend Architecture, Taste, Micro-Interactions, Motion & Complete 3D Visual System for AI Coding Assistants.**
+> An executable skill system that turns an AI coding agent into an elite Design Engineer: taste, motion, 3D, and a **95/100 static quality gate** it must pass before it can call a UI done.
 
-Turn ordinary, flat, generic AI-generated interfaces into state-of-the-art, high-craft web applications with fluid physics, 3D levitation, bespoke design tokens, and scroll-linked choreography.
-
----
-
-## ✨ Features & Capabilities
-
-### 1. 💎 Aesthetic Direction & Design Taste
-* **Anti-Generic Mandate**: Replaces default, harsh Tailwind colors with curated HSL/OKLCH token systems (deep zinc/black `#09090b` dark modes, warm editorial `#fafaf9` light modes).
-* **Depth & Surfaces**: Layered glassmorphism (`backdrop-blur-xl`), crisp 1px hairline borders (`border-white/[0.08]`), specular top highlights, and radial ambient backlight glows.
-* **Typographic Hierarchy**: High-contrast pairing with tight headline tracking (`tracking-tight`), `text-balance`, and comfortable line-height for readability.
-* **Bento Grids & Layouts**: Asymmetric Bento grids and split sticky-scroll sections over repetitive equal-column layouts.
-
-### 2. ⚡ Complete Motion & Physics Engine
-* **Natural Spring Dynamics**: Fluid spring transitions (`stiffness: 300, damping: 24`) — no robotic linear easing.
-* **Staggered Orchestration**: Automatic entrance staggering for lists, grids, and cards with progressive blur-to-focus reveals.
-* **Shared Layout Transitions**: Dynamic sliding pill tabs, expandable cards, and morphing layout states using `layoutId`.
-* **GSAP Timeline & ScrollTrigger**: Clean `useGSAP` integration with automatic cleanup, pinned parallax heroes, and scrubbed scroll storytelling.
-* **60fps Compositor-Only Rules**: Strictly animating `transform` and `opacity` to eliminate layout thrashing.
-
-### 3. 🪐 Complete 3D UI & WebGL System
-* **Curated 3D Asset Integration**: Pre-indexed references to open-source and free 3D visual libraries:
-  * [`3dicons.co`](https://3dicons.co) — Open-source 3D UI icons (clay, gradient, metallic).
-  * [`icons8.com/3d`](https://icons8.com/3d) — Avatars, character illustrations, and onboarding flows.
-  * [`thiings.co/things`](https://thiings.co/things) — Isometric everyday objects and category badges.
-  * [`wannathis.one/illustrations`](https://wannathis.one/illustrations) — Abstract 3D glass and metallic shapes for hero sections.
-  * [`artify.co/3d-lettering`](https://artify.co/3d-lettering) — 3D inflated and glossy typographic headers.
-  * [`fuwatale.com`](https://fuwatale.com) — Hand-crafted floating props and friendly icons.
-* **Interactive 3D Engines**: Ready-to-use boilerplates for **React Three Fiber** (`@react-three/fiber`, `@react-three/drei`), **Three.js**, and lazy-loaded **Spline** (`@splinetool/react-spline`).
-* **Micro-3D Effects**: Interactive mouse-tracking perspective card tilt (`transformStyle: "preserve-3d"`) and ambient levitation loops.
-
-### 4. 🛠️ Micro-Ergonomics & Architecture
-* **State Completeness**: Accessible `focus-visible` rings, active spring presses (`scale: 0.97`), hover micro-lifts, and disabled states.
-* **Zero-Jank Fallbacks**: Shimmer skeleton loaders and designed empty states instead of raw `"Loading..."` text.
-* **React 19 & Next.js Best Practices**: Server-component friendly; push `"use client"` down to animated leaf nodes.
+It stays **dormant** (`alwaysApply: false`, zero background token cost) until you say **"use UI skill"**.
 
 ---
 
-## 📂 Repository Structure
+## Quick start
+
+```powershell
+# 1. Install into a project (Windows / PowerShell)
+.\install.ps1 -Target "D:\projects\my-app"
+
+# 2. In that project, install the UI + motion dependencies
+node .antigravity/skills/ui-skill/scripts/init-ui-stack.mjs            # core
+node .antigravity/skills/ui-skill/scripts/init-ui-stack.mjs --with-3d  # + three, R3F, drei
+
+# 3. Tell your agent:
+#    "use UI skill on the pricing page"
+```
+
+If script execution is blocked: `powershell -ExecutionPolicy Bypass -File .\install.ps1`.
+
+On macOS / Linux, copy `SKILL.md`, `references/`, `templates/` and `scripts/` into `.antigravity/skills/ui-skill/` by hand, and place the trigger rule from `install.ps1` at `.antigravity/rules/ui-skill.md`.
+
+---
+
+## What's inside
 
 ```
 ui-skill/
-├── SKILL.md                     # Core skill definition and activation rules
+├── SKILL.md                         # Master router, trigger, workflow, 95/100 Craft Gate
 ├── references/
-│   ├── 3d-system.md             # 3D asset links, levitation & WebGL boilerplates
-│   ├── design-tokens.md         # OKLCH/HSL palettes, surface recipes & action hierarchy
-│   └── motion-recipes.md        # Spring physics, staggered variants & GSAP patterns
-├── .gitignore
-├── LICENSE                      # MIT License
-└── README.md
+│   ├── design-tokens.md             # OKLCH tokens, surfaces, type scale, bento grids, glows
+│   ├── archetypes.md                # 4 switchable aesthetic personas
+│   ├── motion-recipes.md            # Framer Motion + GSAP useGSAP + Lenis recipes
+│   └── 3d-system.md                 # 6 asset libraries + R3F / Spline / WebGL safeguards
+├── templates/
+│   ├── BentoSpotlightCard.tsx       # Cursor spotlight on border + surface
+│   ├── MagneticButton.tsx           # Magnetic spring pull, 3 variants
+│   ├── ThreeDStage.tsx              # Levitation, tilt, back-glow, floor shadow for 3D assets
+│   └── SmoothScrollProvider.tsx     # Lenis wired into GSAP ScrollTrigger
+├── scripts/
+│   ├── init-ui-stack.mjs            # Detects package manager, installs missing deps, creates cn()
+│   └── audit-ui.mjs                 # Static Craft Gate scanner
+├── install.ps1                      # One-click installer for any project
+└── .antigravity/                    # Synced copy: skills/ui-skill/ and rules/ui-skill.md
 ```
+
+### The four archetypes
+| Archetype | For |
+|---|---|
+| **Linear / Raycast Dark** (default) | SaaS, dev tools, dashboards |
+| **Apple Spatial / Vision** | Product and hardware showcases |
+| **Neo-Brutalist / Gumroad** | Creator tools, playful apps |
+| **Editorial / Stripe Craft** | Fintech, luxury, editorial |
+
+### The 3D asset libraries
+[`3dicons.co`](https://3dicons.co) · [`icons8.com/3d`](https://icons8.com/3d) · [`thiings.co/things`](https://thiings.co/things) · [`wannathis.one/illustrations`](https://wannathis.one/illustrations) · [`artify.co/3d-lettering`](https://artify.co/3d-lettering) · [`fuwatale.com`](https://fuwatale.com)
+
+These are external sites. Download the packs you need, **check each license**, and drop exports (WebP/PNG with alpha) into your project, e.g. `public/3d/`. The skill references assets by path and lists what you still need to download.
 
 ---
 
-## 🚀 Installation & Setup
-
-### Option 1: Google Antigravity / Gemini CLI
-
-#### Global Installation (Available across all your projects):
-```bash
-# Clone directly into your global skills directory:
-git clone https://github.com/Parth-tarale-dev/ui-skill.git ~/.gemini/config/skills/ui-skill
-```
-
-#### Workspace Installation (For a specific project):
-```bash
-# In your project root:
-mkdir -p .agents/skills
-git clone https://github.com/Parth-tarale-dev/ui-skill.git .agents/skills/ui-skill
-```
-
----
-
-### Option 2: Claude Code
-
-Add the skill directory to your Claude skills configuration:
-```bash
-git clone https://github.com/Parth-tarale-dev/ui-skill.git ~/.claude/skills/ui-skill
-```
-Or reference `SKILL.md` directly inside your `CLAUDE.md`.
-
----
-
-### Option 3: Cursor / Windsurf
-
-Copy `SKILL.md` or symlink the folder into your project `.cursorrules` or `.windsurfrules`:
-```bash
-cat SKILL.md >> .cursorrules
-```
-
----
-
-## 💡 How to Trigger
-
-Whenever you are interacting with your AI agent, prompt:
-
-```text
-"use UI skill on this page"
-```
-or
-```text
-"Redesign this dashboard using UI skill"
-```
-
-The AI agent will immediately:
-1. Audit the interface for generic styles, missing contrast, and lifeless layouts.
-2. Configure recommended dependencies (`motion`, `gsap`, `@gsap/react`, `lucide-react`, `clsx`, `tailwind-merge`).
-3. Apply cohesive HSL/OKLCH design tokens, 1px specular borders, and layered glassmorphism.
-4. Inject fluid spring micro-interactions, floating 3D anchors, and buttery entrance animations.
-
----
-
-## 📦 Recommended Dependencies
-
-When building a project with `ui-skill`, install:
+## The 95/100 Craft Gate
 
 ```bash
-# Core animation & styling
-npm install motion gsap @gsap/react lucide-react clsx tailwind-merge
-
-# Optional: Interactive 3D / WebGL
-npm install three @react-three/fiber @react-three/drei @splinetool/react-spline
+node .antigravity/skills/ui-skill/scripts/audit-ui.mjs            # scans ./src
+node .antigravity/skills/ui-skill/scripts/audit-ui.mjs --src app  # another folder
+node .antigravity/skills/ui-skill/scripts/audit-ui.mjs --json     # machine-readable
 ```
+
+Score starts at 100; errors cost 5, warnings cost 2. **Pass = score ≥ 95 and zero errors.** Exit code is `1` on failure, so it works in CI.
+
+| Gate check | Examples caught |
+|---|---|
+| 1. Tokens, not defaults | `bg-blue-500`, `text-gray-600`, `shadow-lg` |
+| 2. Complete states | buttons / inputs missing `hover:`, `focus-visible:`, `active:`, `disabled:` |
+| 3. No placeholder boxes | empty `bg-gray-*` divs, `via.placeholder.com`, `TODO` left in code |
+| 4. 60fps motion | `transition-all`, GSAP inside `useEffect`, `useGSAP` without `scope`, animating `width`/`top`, no reduced-motion handling |
+| 5. Responsive | 3+ column grids and `text-7xl` with no breakpoints, fixed widths ≥ 360px, touch targets under 44px, `w-screen` |
+
+Suppress a deliberate exception with `// ui-audit-ignore-next-line` (or `ui-audit-ignore` on the same line, or `// ui-audit-disable-file`).
+
+It is a **static** scan: it cannot see whether a focal area looks good or whether a layout holds at 320px. Review those by hand.
 
 ---
 
-## 📄 License
+## Requirements
 
-This project is licensed under the [MIT License](LICENSE).
-Feel free to use, modify, and distribute in personal or commercial projects.
+- Node 18+
+- React 18 or 19, Tailwind CSS (v3 or v4), TypeScript
+- Templates import `cn` from `@/lib/utils` (created for you by `init-ui-stack.mjs`) and need an `@/*` path alias
+
+## License
+
+MIT
